@@ -2,6 +2,7 @@ import projectImage1 from '../assets/project1.jpg';
 import projectImage2 from '../assets/project2.png';
 import projectImage3 from '../assets/project3.png';
 import projectImage4 from '../assets/project1.png';
+import projectImage5 from '../assets/project4.png';
 
 export const projects = [
     {
@@ -9,7 +10,7 @@ export const projects = [
         image: projectImage1,
         title: 'E-Commerce Platform',
         description: "A comprehensive E-Commerce platform developed using Laravel, Inertia.js, and React.js, featuring a MySQL database. The project includes full user authentication with login and registration functionality.",
-        link: 'https://example.com/1',
+        link: 'https://github.com/Ganiramadhan/E-Commerce-',
         languages: ['Laravel', 'Inertia.js', 'React.js', 'MySQL']
     },
     {
@@ -35,5 +36,13 @@ export const projects = [
         description: "A user-friendly financial reporting platform built with Laravel, Inertia.js, and Bootstrap. This project is designed to present financial data clearly and efficiently to users.",
         link: 'https://keuangan.megamaster.id',
         languages: ['Laravel', 'Inertia.js', 'Bootstrap']
+    },
+    {
+        id: 5,
+        image: projectImage5,
+        title: 'Todolist App',
+        description: "Description: This repository contains code for a simple todo application that allows users to add, delete, and manage their list of tasks. The application is built using React and features responsive design, modern gradients, and integration with SweetAlert2 for user action confirmation.",
+        link: 'https://github.com/Ganiramadhan/todolist-app',
+        languages: ['Supabase', 'Express', 'React,Js','Node.Js','Tailwindcss']
     },
 ];
