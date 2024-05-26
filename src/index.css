@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    scroll-behavior: smooth;
+    padding: 0px;
+    margin: 0px;
+}
+.highlight {
+    color: #87CEEB;
+    font-weight: bold;
+    padding: 0 2px;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.animate-rotate {
+    animation: rotate 20s linear infinite;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.rounded-full {
+    border-radius: 50%;
+}
