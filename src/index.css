@@ -33,3 +33,8 @@
 .rounded-full {
     border-radius: 50%;
 }
+
+
+.toast-style {
+    animation: shake 0.5s linear;
+}

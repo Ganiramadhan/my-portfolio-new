@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { FaHandshake, FaArrowUp } from 'react-icons/fa';
-import { toast, ToastContainer, Slide } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import heroImage from '../assets/dino-kuning.png';
 
@@ -29,26 +29,7 @@ const Hero = () => {
     };
 
     const handleSayHelloClick = () => {
-        toast(
-            <div className="flex items-center">
-                <img
-                    src="https://twemoji.maxcdn.com/v/latest/72x72/1f525.png"
-                    alt="Fire Emoji"
-                    className="w-6 h-6 mr-2"
-                />
-                <span>Hello friend!</span>
-            </div>,
-            {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                transition: Slide,
-            }
-        );
+        toast('Hello friend!');
     };
 
     return (
