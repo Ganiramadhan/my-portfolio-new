@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import { FaPaperPlane, FaArrowUp } from 'react-icons/fa';
+import { FaHandshake, FaArrowUp } from 'react-icons/fa';
+import { toast, ToastContainer, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import heroImage from '../assets/dino-kuning.png';
 
 const Hero = () => {
@@ -26,13 +28,36 @@ const Hero = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    const handleSayHelloClick = () => {
+        toast(
+            <div className="flex items-center">
+                <img
+                    src="https://twemoji.maxcdn.com/v/latest/72x72/1f525.png"
+                    alt="Fire Emoji"
+                    className="w-6 h-6 mr-2"
+                />
+                <span>Hello friend!</span>
+            </div>,
+            {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                transition: Slide,
+            }
+        );
+    };
+
     return (
         <div>
             <div id="#" className="bg-gradient-to-r from-gray-900 to-gray-700 py-20 px-6 md:px-10 md:flex md:items-center" style={{ minHeight: '100vh' }}>
                 <motion.div 
                     initial={{ opacity: 0, x: -100 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 1, ease: 'easeInOut' }}
                     className="md:w-1/2 md:pr-10 mt-4"
                 >
                     <h1 className="text-gray-100 text-4xl font-bold mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
@@ -55,14 +80,17 @@ const Hero = () => {
                     <p className="mt-4 text-lg text-gray-300" style={{ fontFamily: 'Open Sans, sans-serif' }}>
                         I'm a full-stack developer with 1 year of experience in React, Next.js, Node.js, Laravel, and JavaScript, If you would like to know more or collaborate on a project, feel free to reach out!
                     </p>
-                    <button className='btn bg-blue-400 text-white px-4 py-2 mt-4 hover:bg-blue-500 transition duration-300 rounded-md flex items-center'>
-                        Contact Me <FaPaperPlane className="ml-2" />
+                    <button
+                        className='btn bg-blue-400 text-white px-4 py-2 mt-4 hover:bg-blue-500 transition duration-300 rounded-md flex items-center'
+                        onClick={handleSayHelloClick}
+                    >
+                        Say Hello <FaHandshake className="ml-2" />
                     </button>
                 </motion.div>
                 <motion.div 
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 1, ease: 'easeInOut' }}
                     className="md:w-1/2 mt-10 md:mt-0 relative"
                 >
                     <div className="relative flex justify-center items-center h-64 md:h-screen">
@@ -80,7 +108,7 @@ const Hero = () => {
                         </svg>
                         <motion.img
                             whileHover={{ scale: 1.1, cursor: 'pointer' }}
-                            animate={{ y: [0, -10, 0], transition: { duration: 3, repeat: Infinity } }}
+                            animate={{ y: [0, -10, 0], transition: { duration: 3, repeat: Infinity, ease: 'easeInOut' } }}
                             className="relative z-10 w-full max-w-xs"
                             src={heroImage}
                             alt="Hero Image"
@@ -96,6 +124,7 @@ const Hero = () => {
                     <FaArrowUp className="h-6 w-6" />
                 </button>
             )}
+            <ToastContainer />
         </div>
     );
 };
