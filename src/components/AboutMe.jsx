@@ -1,7 +1,7 @@
 import heroImage from '../assets/dino-kuning.png';
 import resumePDF from '../assets/cv.pdf';
-import { useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { FaArrowLeft, FaArrowRight, FaInfoCircle, FaBriefcase } from 'react-icons/fa';
 import { FiDownload } from "react-icons/fi";
 import { experienceContent } from '../utils/experience';
@@ -12,8 +12,7 @@ const HeroImage = () => (
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
-            whileInView={{ scale: 1.05 }}
-            viewport={{ once: false, amount: 0.5 }}
+            whileHover={{ scale: 1.05 }}
             className="relative"
         >
             <img src={heroImage} alt="Your Name" className="w-64 h-64 object-cover" />
@@ -94,8 +93,6 @@ const TabContent = ({ activeTab, experienceStep, handlePrevStep, handleNextStep 
 const AboutMe = () => {
     const [activeTab, setActiveTab] = useState('about');
     const [experienceStep, setExperienceStep] = useState(0);
-    const aboutRef = useRef(null);
-    const isInView = useInView(aboutRef, { triggerOnce: false });
 
     const handleNextStep = () => {
         setExperienceStep((prevStep) => (prevStep < experienceContent.length - 1 ? prevStep + 1 : prevStep));
@@ -107,12 +104,12 @@ const AboutMe = () => {
 
     return (
         <div id="aboutme" className="bg-gradient-to-r from-gray-900 to-gray-700 py-20 px-6 md:px-10 flex items-center justify-center" style={{ minHeight: '100vh' }}>
-            <div ref={aboutRef} className="container mx-auto flex flex-col md:flex-row items-center justify-between relative z-10 space-y-10 md:space-y-0">
-                {isInView && <HeroImage />}
+            <div className="container mx-auto flex flex-col md:flex-row items-center justify-between relative z-10 space-y-10 md:space-y-0">
+                <HeroImage />
                 <motion.div
                     key={activeTab}
                     initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 100 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeInOut" }}
                     className="md:w-2/3 max-w-5xl mx-auto"
                 >
