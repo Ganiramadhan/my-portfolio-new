@@ -29,7 +29,7 @@ const MyFooter = () => {
                         <h3 className="text-lg font-semibold text-gray-100">Contact Us</h3>
                         <p className="mt-2">Jl. Cigadung, Kec. Cibeunying Kaler, Kota Bandung</p>
                         <p className="mt-1">Phone: (+62) 8387 8624 702</p>
-                        <p className="mt-1">Email: info@example.com</p>
+                        <p className="mt-1">Email: ganiramadhan35@gmail.com</p>
                     </div>
                 </div>
                 <div className="mt-6 text-center text-gray-500 text-sm">
