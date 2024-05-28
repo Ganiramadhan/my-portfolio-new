@@ -8,6 +8,7 @@ import heroImage from '../assets/dino-kuning.png';
 
 const Hero = () => {
     const [showScrollToTop, setShowScrollToTop] = useState(false);
+    const [showAlert, setShowAlert] = useState(false); // State untuk melacak apakah alert sudah ditampilkan
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,7 +30,13 @@ const Hero = () => {
     };
 
     const handleSayHelloClick = () => {
-        toast('Hello friend!');
+        if (!showAlert) {
+            toast('Hello friend!');
+            setShowAlert(true); // Set state menjadi true ketika alert ditampilkan
+            setTimeout(() => {
+                setShowAlert(false); // Set state menjadi false setelah beberapa waktu agar alert bisa muncul lagi
+            }, 6000); // Ganti angka ini dengan durasi yang diinginkan sebelum alert dapat muncul lagi
+        }
     };
 
     return (
