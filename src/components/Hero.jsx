@@ -8,7 +8,7 @@ import heroImage from '../assets/dino-kuning.png';
 
 const Hero = () => {
     const [showScrollToTop, setShowScrollToTop] = useState(false);
-    const [showAlert, setShowAlert] = useState(false); // State untuk melacak apakah alert sudah ditampilkan
+    const [showAlert, setShowAlert] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -32,10 +32,10 @@ const Hero = () => {
     const handleSayHelloClick = () => {
         if (!showAlert) {
             toast('Hello friend!');
-            setShowAlert(true); // Set state menjadi true ketika alert ditampilkan
+            setShowAlert(true); 
             setTimeout(() => {
-                setShowAlert(false); // Set state menjadi false setelah beberapa waktu agar alert bisa muncul lagi
-            }, 6000); // Ganti angka ini dengan durasi yang diinginkan sebelum alert dapat muncul lagi
+                setShowAlert(false); 
+            }, 6000); 
         }
     };
 
@@ -48,7 +48,7 @@ const Hero = () => {
                     transition={{ duration: 1, ease: 'easeInOut' }}
                     className="md:w-1/2 md:pr-10 mt-4"
                 >
-                    <h1 className="text-gray-100 text-4xl font-bold mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                    <h1 className="text-gray-100 text-4xl font-bold mb-2" style={{ fontFamily: 'Poppins, sans-serif', userSelect: 'none' }}>
                         <span>Hello, I'm</span> <span className="text-blue-400">Gani Ramadhan</span>
                     </h1>
                     <TypeAnimation
@@ -62,10 +62,10 @@ const Hero = () => {
                         ]}
                         wrapper="span"
                         speed={10}
-                        style={{ fontSize: '2em', display: 'inline-block', color: '#A0AEC0', fontFamily: 'Poppins, sans-serif' }}
+                        style={{ fontSize: '2em', display: 'inline-block', color: '#A0AEC0', fontFamily: 'Poppins, sans-serif', userSelect: 'none' }}
                         repeat={Infinity}
                     />
-                    <p className="mt-4 text-lg text-gray-300" style={{ fontFamily: 'Open Sans, sans-serif' }}>
+                    <p className="mt-4 text-lg text-gray-300" style={{ fontFamily: 'Open Sans, sans-serif', userSelect: 'none' }}>
                         I'm a full-stack developer with 1 year of experience in React, Next.js, Node.js, Laravel, and JavaScript, If you would like to know more or collaborate on a project, feel free to reach out!
                     </p>
                     <button
@@ -107,9 +107,9 @@ const Hero = () => {
             {showScrollToTop && (
                 <button
                     onClick={scrollToTop}
-                    className="fixed bottom-4 right-4 bg-blue-500 text-white p-3 z-50 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
+                    className="fixed bottom-4 right-4 bg-blue-500 text-white p-3 z-50 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 flex items-center justify-center"
                 >
-                    <FaArrowUp className="h-6 w-6" />
+                    <FaArrowUp className="h-6 w-6 animate-bounce" />
                 </button>
             )}
             <ToastContainer />

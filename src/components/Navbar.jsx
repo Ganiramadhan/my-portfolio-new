@@ -15,7 +15,7 @@ const Navbar = () => {
         <nav className="bg-gradient-to-r from-blue-400 to-blue-600 p-4 shadow-md fixed w-full z-50 transition-colors duration-300">
             <div className="container mx-auto flex justify-between items-center">
                 <div className="flex items-center">
-                    <img src={logoImage} alt="ganipedia logo" style={{ width: '50px' }} />
+                    <img src={logoImage} alt="ganipedia logo" style={{ width: '60px' }} />
                     <div className="text-blue-600 text-2xl font-bold"><span className='text-white'> GaniPedia</span> </div>
                 </div>
                 <div className={`hidden md:flex md:items-center md:space-x-6 ${isOpen ? 'opacity-0' : 'opacity-100'}`}>

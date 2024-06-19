@@ -5,6 +5,7 @@ import { FaPaperPlane } from 'react-icons/fa';
 import { icon as leafletIcon } from 'leaflet';
 import { motion } from 'framer-motion';
 import placeHolderMap from '../assets/placeholder.png';
+import { ClipLoader } from 'react-spinners'; // Import spinner
 
 const Contact = () => {
     const customIcon = leafletIcon({
@@ -16,6 +17,7 @@ const Contact = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [loading, setLoading] = useState(false); 
 
     const resetInput = () => {
         setName('');
@@ -24,13 +26,22 @@ const Contact = () => {
     };
 
     const handleFormSubmit = () => {
+        setLoading(true);
         const whatsappMessage = `https://wa.me/6283878624702?text=Welcome!%0AName:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0AMessage:%20${encodeURIComponent(message)}`;
-        window.open(whatsappMessage);
-        resetInput();
+        setTimeout(() => {
+            window.open(whatsappMessage);
+            setLoading(false);
+            resetInput();
+        }, 2000);
     };
 
     return (
         <div id="contact" className="py-20 bg-gradient-to-r from-gray-900 to-gray-700 relative">
+            {loading && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
+                    <ClipLoader color="#ffffff" size={60} /> {/* Spinner */}
+                </div>
+            )}
             <section>
                 <motion.div
                     className="max-w-7xl mx-auto text-center"
@@ -65,7 +76,7 @@ const Contact = () => {
                         </MapContainer>
                     </motion.div>
                     <motion.div
-                        className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg z-10"
+                        className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg z-10 relative"
                         initial={{ opacity: 0, x: 100 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -122,6 +133,7 @@ const Contact = () => {
                                 <button
                                     type="submit"
                                     className="inline-flex items-center justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
+                                    disabled={loading} 
                                 >
                                     <FaPaperPlane className="mr-2" />
                                     Send Message
