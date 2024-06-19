@@ -5,7 +5,7 @@ import { FaPaperPlane } from 'react-icons/fa';
 import { icon as leafletIcon } from 'leaflet';
 import { motion } from 'framer-motion';
 import placeHolderMap from '../assets/placeholder.png';
-import { ClipLoader } from 'react-spinners'; // Import spinner
+import { ClipLoader } from 'react-spinners'; 
 
 const Contact = () => {
     const customIcon = leafletIcon({
@@ -39,7 +39,7 @@ const Contact = () => {
         <div id="contact" className="py-20 bg-gradient-to-r from-gray-900 to-gray-700 relative">
             {loading && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
-                    <ClipLoader color="#ffffff" size={60} /> {/* Spinner */}
+                    <ClipLoader color="#ffffff" size={60} /> 
                 </div>
             )}
             <section>
