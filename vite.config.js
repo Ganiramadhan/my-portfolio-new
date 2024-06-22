@@ -6,4 +6,7 @@ export default defineConfig({
     resolve: {
         extensions: ['.js', '.jsx'],
     },
+    server:{
+        port:9090,
+    }
 });
