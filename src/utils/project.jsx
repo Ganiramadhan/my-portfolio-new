@@ -3,6 +3,7 @@ import projectImage2 from '../assets/project2.png';
 import projectImage3 from '../assets/project3.png';
 import projectImage4 from '../assets/project1.png';
 import projectImage5 from '../assets/project4.png';
+import projectImage6 from '../assets/project6.png';
 
 export const projects = [
     {
@@ -23,12 +24,13 @@ export const projects = [
     },
     {
         id: 3,
-        image: projectImage3,
-        title: 'Dealer Landing Page',
-        description: "A visually appealing landing page for a Toyota automobile dealership. Developed with HTML, CSS, and JavaScript, this project emphasizes responsive design and user engagement.",
-        link: 'https://www.dealerbandungtoyota.com',
-        languages: ['HTML', 'CSS', 'JavaScript']
+        image: projectImage6,
+        title: 'Movie List',
+        description: "Description: This repository contains the code for a movie listing application that allows users to search, filter, and manage their watchlist of movies. The application is built using React and features responsive design, modern UI elements, and integration with The Movie Database (TMDb) API for fetching movie data.",
+        link: 'https://movie-pedia-sage.vercel.app',
+        languages: ['React.js', 'Node.js', 'Tailwind CSS', 'TMDb API']
     },
+   
     {
         id: 4,
         image: projectImage4,
@@ -45,4 +47,14 @@ export const projects = [
         link: 'https://github.com/Ganiramadhan/todolist-app',
         languages: ['Supabase', 'Express', 'React,Js','Node.Js','Tailwindcss']
     },
+   
+    {
+        id: 6,
+        image: projectImage3,
+        title: 'Dealer Landing Page',
+        description: "A visually appealing landing page for a Toyota automobile dealership. Developed with HTML, CSS, and JavaScript, this project emphasizes responsive design and user engagement.",
+        link: 'https://www.dealerbandungtoyota.com',
+        languages: ['HTML', 'CSS', 'JavaScript']
+    },
+    
 ];
